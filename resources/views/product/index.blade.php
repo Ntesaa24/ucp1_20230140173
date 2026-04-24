@@ -2,19 +2,14 @@
     <div class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             {{-- Header Section --}}
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+            <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight" style="color: #ffffff;">Product List</h1>
-                    <p class="text-slate-500 mt-2 text-lg" style="color: #94a3b8;">Manage your product inventory efficiently</p>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-tight">Product List</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your product inventory</p>
                 </div>
-                <a href="{{ route('product.create') }}"
-                   class="inline-flex items-center px-6 py-3 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg group"
-                   style="background-color: #4f46e5;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 group-hover:rotate-90 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                    </svg>
-                    Add Product
-                </a>
+                @can('manage-products')
+                    <x-add-product :url="route('product.create')" :name="'Product'"/>
+                @endcan
             </div>
 
             {{-- Notifications --}}
