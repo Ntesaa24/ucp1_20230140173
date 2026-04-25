@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $totalProducts = \App\Models\Product::count();
-    $lowStockCount = \App\Models\Product::where('qty', '<', 10)->count();
+    $lowStockCount = \App\Models\Product::where('quantity', '<', 10)->count();
     
     return view('dashboard', compact('totalProducts', 'lowStockCount'));
 })->middleware(['auth', 'verified'])->name('dashboard');

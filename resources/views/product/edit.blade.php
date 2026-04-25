@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-xl mx-auto">
             <div class="rounded-3xl shadow-2xl overflow-hidden shadow-black/50 p-8" style="background-color: #1a1c2a; border: 1px solid rgba(255,255,255,0.05);">
                 <div class="mb-8 flex items-center gap-4">
                     <a href="{{ route('product.index') }}" class="text-gray-400 hover:text-white transition-colors">
@@ -23,6 +23,7 @@
                         <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Nama Produk</label>
                         <input type="text" name="name" id="name" required
                                class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                               style="background-color: #131520 !important; color: white !important;"
                                placeholder="e.g. Wireless Headphones"
                                value="{{ old('name', $product->name) }}">
                         @error('name')
@@ -34,10 +35,11 @@
                     <div>
                         <label for="category_id" class="block text-sm font-medium text-gray-400 mb-2">Kategori</label>
                         <select name="category_id" id="category_id" required
-                                class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all appearance-none">
-                            <option value="">-- Pilih Kategori --</option>
+                                class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all appearance-none"
+                                style="background-color: #131520 !important; color: white !important;">
+                            <option value="" class="bg-[#131520] text-white">-- Pilih Kategori --</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
+                                <option value="{{ $category->id }}" class="bg-[#131520] text-white" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
                                     {{ $category->name }}
                                 </option>
                             @endforeach
@@ -53,6 +55,7 @@
                             <label for="quantity" class="block text-sm font-medium text-gray-400 mb-2">Quantity</label>
                             <input type="text" name="quantity" id="quantity" required
                                    class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                                   style="background-color: #131520 !important; color: white !important;"
                                    placeholder="0"
                                    value="{{ old('quantity', $product->quantity) }}">
                             @error('quantity')
@@ -65,6 +68,7 @@
                             <label for="price" class="block text-sm font-medium text-gray-400 mb-2">Price (Rp)</label>
                             <input type="number" name="price" id="price" required step="0.01"
                                    class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                                   style="background-color: #131520 !important; color: white !important;"
                                    placeholder="0"
                                    value="{{ old('price', $product->price) }}">
                             @error('price')

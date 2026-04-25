@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
+        <div class="max-w-xl mx-auto">
             <div class="rounded-3xl shadow-2xl overflow-hidden shadow-black/50 p-8" style="background-color: #1a1c2a; border: 1px solid rgba(255,255,255,0.05);">
                 <div class="mb-8 flex items-center gap-4">
                     <a href="{{ route('categories.index') }}" class="text-gray-400 hover:text-white transition-colors">
@@ -17,6 +17,7 @@
                         <label for="name" class="block text-sm font-medium text-gray-400 mb-3">Category</label>
                         <input type="text" name="name" id="name" required
                                class="w-full bg-[#131520] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                               style="background-color: #131520 !important; color: white !important;"
                                placeholder="Electronic"
                                value="{{ old('name') }}">
                         @error('name')
