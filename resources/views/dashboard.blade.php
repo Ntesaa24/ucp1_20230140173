@@ -7,6 +7,13 @@
                 <p class="text-slate-500 mt-2">Welcome back, <span class="text-indigo-400 font-bold">{{ Auth::user()->name }}</span>! Here's what's happening today.</p>
             </div>
 
+            {{-- Role Info --}}
+            <div class="mb-8 rounded-2xl p-6 shadow-xl flex items-center gap-4" style="background-color: #131520; border: 1px solid rgba(255,255,255,0.05);">
+                <div class="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                    Role: <span class="text-indigo-400 ml-2">{{ ucfirst(Auth::user()->role) }}</span>
+                </div>
+            </div>
+
             {{-- Stats Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 {{-- Total Products Card --}}
